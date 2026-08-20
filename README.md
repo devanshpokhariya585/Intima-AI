@@ -225,7 +225,6 @@ Make sure your AWS credentials have `AmazonBedrockFullAccess` and Nova 2 Lite mo
 
 ---
 
-Access our product at: https://intima-ai-latest.vercel.app/login
 
 ## Training Data & Model
 
