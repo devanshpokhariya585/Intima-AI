@@ -1,7 +1,7 @@
 # IntimaAI ~ Healthcare Medical Coding Agent - By Devansh Pokhariya
 
 > _Accurate codes. Respected patients. Smarter healthcare._
-> *https://intima-ai-latest.vercel.app/login*
+
 
 IntimaAI is an AI-powered medical coding assistant built on **Amazon Bedrock (Nova 2 Lite)**, designed to automate and improve the accuracy of ICD-10-CM diagnosis coding, CPT procedure coding, and payer-specific coverage policy evaluation ~ while keeping patient dignity and data privacy at the center of everything it does.
 
