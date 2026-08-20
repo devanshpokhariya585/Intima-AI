@@ -1,5 +1,5 @@
 """
-AgentCore Gateway Setup — MCP Server Registration
+AgentCore Gateway Setup ~ MCP Server Registration
 Run this ONCE to create the Gateway and register your MCP servers.
 After running, the Gateway ID is saved to gateway_config.json for use by app.py
 """
@@ -8,7 +8,7 @@ import boto3
 import json
 import os
 
-# ─── CONFIG — update before running ─────────────────────────────────────────
+# ─── CONFIG ~ update before running ─────────────────────────────────────────
 AWS_REGION     = "us-east-1"
 AWS_ACCOUNT_ID = "379264686925"
 IAM_ROLE_ARN   = f"arn:aws:iam::{379264686925}:role/BedrockAgentCoreRole"

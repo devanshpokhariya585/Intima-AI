@@ -4,13 +4,13 @@ import Login from './component/Login'
 import Register from './component/Register'
 import Home from './component/Home'
 
-// Protected route — redirect to /login if not authenticated
+// Protected route ~ redirect to /login if not authenticated
 function ProtectedRoute({ children }) {
   const { user } = useAuth()
   return user ? children : <Navigate to="/login" replace />
 }
 
-// Public route — redirect to /home if already logged in
+// Public route ~ redirect to /home if already logged in
 function PublicRoute({ children }) {
   const { user } = useAuth()
   return user ? <Navigate to="/home" replace /> : children

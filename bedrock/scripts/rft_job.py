@@ -1,5 +1,5 @@
 """
-RFT Job Launcher — Amazon Bedrock
+RFT Job Launcher ~ Amazon Bedrock
 Kicks off Reinforcement Fine-Tuning for medical coding on Nova 2 Lite
 Run this ONCE to start training. Monitor via AWS Console > Bedrock > Custom Models
 """
@@ -8,7 +8,7 @@ import boto3
 import json
 import time
 
-# ─── CONFIG — update these before running ───────────────────────────────────
+# ─── CONFIG ~ update these before running ───────────────────────────────────
 AWS_REGION         = "us-east-1"
 AWS_ACCOUNT_ID     = "379264686925"
 IAM_ROLE_ARN       = f"arn:aws:iam::{AWS_ACCOUNT_ID}:role/BedrockRFTRole"

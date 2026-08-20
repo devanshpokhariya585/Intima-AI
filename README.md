@@ -1,9 +1,9 @@
-# IntimaAI — Healthcare Medical Coding Agent - By Devansh Pokhariya
+# IntimaAI ~ Healthcare Medical Coding Agent - By Devansh Pokhariya
 
-> *Accurate codes. Respected patients. Smarter healthcare.*
+> _Accurate codes. Respected patients. Smarter healthcare._
 > *https://intima-ai-latest.vercel.app/login*
 
-IntimaAI is an AI-powered medical coding assistant built on **Amazon Bedrock (Nova 2 Lite)**, designed to automate and improve the accuracy of ICD-10-CM diagnosis coding, CPT procedure coding, and payer-specific coverage policy evaluation — while keeping patient dignity and data privacy at the center of everything it does.
+IntimaAI is an AI-powered medical coding assistant built on **Amazon Bedrock (Nova 2 Lite)**, designed to automate and improve the accuracy of ICD-10-CM diagnosis coding, CPT procedure coding, and payer-specific coverage policy evaluation ~ while keeping patient dignity and data privacy at the center of everything it does.
 
 ---
 
@@ -11,47 +11,54 @@ IntimaAI is an AI-powered medical coding assistant built on **Amazon Bedrock (No
 
 Medical coding is one of the most error-prone and time-consuming processes in healthcare administration. A wrong ICD-10 code can mean a denied claim, a delayed treatment, or a patient being misclassified in their health record. Payer policies vary widely and change frequently, making it nearly impossible for coders to stay current manually.
 
-IntimaAI bridges this gap — bringing the precision of AI to a field where precision directly affects patient outcomes and institutional revenue.
+IntimaAI bridges this gap ~ bringing the precision of AI to a field where precision directly affects patient outcomes and institutional revenue.
 
 ---
 
 ## Core Capabilities
 
 ### 1. ICD-10-CM Diagnosis Code Assignment
-IntimaAI reads clinical notes and assigns the most specific, appropriate ICD-10-CM diagnosis codes based on the **FY2026 CDC code set** — the same codes that govern real-world clinical billing from October 1, 2025 onwards. It doesn't just guess — it explains its rationale for every code it assigns, so human coders can verify and learn.
+
+IntimaAI reads clinical notes and assigns the most specific, appropriate ICD-10-CM diagnosis codes based on the **FY2026 CDC code set** ~ the same codes that govern real-world clinical billing from October 1, 2025 onwards. It doesn't just guess ~ it explains its rationale for every code it assigns, so human coders can verify and learn.
 
 **How it works:**
+
 - Parses free-text clinical documentation
 - Identifies all active diagnoses, comorbidities, and complications
 - Assigns codes at the highest specificity level (up to 7 characters)
 - Provides plain-English rationale for each assignment
 
 ### 2. CPT Procedure Code Assignment
-Beyond diagnosis, IntimaAI identifies the procedures performed and maps them to the correct CPT codes — ensuring that every billable service is captured accurately and completely.
+
+Beyond diagnosis, IntimaAI identifies the procedures performed and maps them to the correct CPT codes ~ ensuring that every billable service is captured accurately and completely.
 
 **How it works:**
+
 - Identifies procedures, services, and interventions from clinical notes
 - Assigns appropriate CPT codes with modifier considerations
 - Flags common upcoding/downcoding risks
 - Explains the clinical basis for each code selected
 
 ### 3. Payer-Specific Policy Evaluation
-Every payer has different rules — what Aetna approves, UnitedHealthcare may deny. IntimaAI evaluates a clinical scenario against known payer coverage policies and prior authorization criteria, predicting approval or denial before a claim is even submitted.
+
+Every payer has different rules ~ what Aetna approves, UnitedHealthcare may deny. IntimaAI evaluates a clinical scenario against known payer coverage policies and prior authorization criteria, predicting approval or denial before a claim is even submitted.
 
 **How it works:**
+
 - Takes payer name + clinical scenario as input
 - Applies known Local Coverage Determinations (LCDs) and Clinical Policy Bulletins
 - Returns an approval/denial prediction with the specific policy criteria cited
 - Flags missing documentation that could strengthen a claim
 
 ### 4. Full Coding Analysis
-A single-pass mode that combines all three capabilities — ICD-10, CPT, and payer policy — into one comprehensive coding report for a clinical note.
+
+A single-pass mode that combines all three capabilities ~ ICD-10, CPT, and payer policy ~ into one comprehensive coding report for a clinical note.
 
 ---
 
 ## Bringing Dignity Through Privacy
 
-IntimaAI is built with patient dignity as a non-negotiable design principle — not an afterthought.
+IntimaAI is built with patient dignity as a non-negotiable design principle ~ not an afterthought.
 
 **No patient data is stored.** Clinical notes entered into IntimaAI are processed in real time and never persisted to any database or log.
 
@@ -61,7 +68,7 @@ IntimaAI is built with patient dignity as a non-negotiable design principle — 
 
 **Encryption in transit and at rest.** All data passed between the frontend, backend, and Bedrock is encrypted via HTTPS/TLS. Training data stored in Amazon S3 is encrypted at rest.
 
-**Human in the loop.** IntimaAI is designed as a coding *assistant*, not a replacement for certified medical coders. Every output is meant to be reviewed by a qualified professional before submission. The rationale provided with each code is specifically designed to make that review fast and informed.
+**Human in the loop.** IntimaAI is designed as a coding _assistant_, not a replacement for certified medical coders. Every output is meant to be reviewed by a qualified professional before submission. The rationale provided with each code is specifically designed to make that review fast and informed.
 
 ---
 
@@ -70,16 +77,17 @@ IntimaAI is built with patient dignity as a non-negotiable design principle — 
 ```
 User (Browser)
     ↓ HTTPS
-Frontend — index.html (Vercel)
+Frontend ~ index.html (Vercel)
     ↓ REST API
-Flask Backend — app.py (Render)
+Flask Backend ~ app.py (Render)
     ↓ boto3
-Amazon Bedrock — Nova 2 Lite (us-east-1)
+Amazon Bedrock ~ Nova 2 Lite (us-east-1)
     ↓
 AI Coding Response → back to user
 ```
 
 **Training Pipeline (offline):**
+
 ```
 CDC FY2026 ICD-10 Code Files (74,719 codes)
     ↓
@@ -92,7 +100,8 @@ Bedrock Reinforcement Fine-Tuning (RFT) Job
 Fine-tuned Nova 2 Lite Custom Model
 ```
 
-**Agentic Layer — Amazon Bedrock AgentCore:**
+**Agentic Layer ~ Amazon Bedrock AgentCore:**
+
 ```
 Fine-tuned Nova 2 Lite
     ↓
@@ -106,27 +115,27 @@ EHR MCP Server   CMS Codes MCP    Payer Policy MCP
                  lookups)          decisions)
 ```
 
-The AgentCore Gateway acts as a centralized, fully managed interface that registers and synchronizes all MCP (Model Context Protocol) servers. When the agent handles a complex query, it can dynamically discover and invoke the right tools — pulling live patient data from an EHR, looking up current code definitions from CMS, or checking the latest payer policy bulletins — all without hardcoded integrations. Each MCP server connection is managed, authenticated, and versioned through the Gateway, making the system extensible as new data sources are added.
+The AgentCore Gateway acts as a centralized, fully managed interface that registers and synchronizes all MCP (Model Context Protocol) servers. When the agent handles a complex query, it can dynamically discover and invoke the right tools ~ pulling live patient data from an EHR, looking up current code definitions from CMS, or checking the latest payer policy bulletins ~ all without hardcoded integrations. Each MCP server connection is managed, authenticated, and versioned through the Gateway, making the system extensible as new data sources are added.
 
 ---
 
 ## Tech Stack
 
-| Layer | Technology |
-|---|---|
-| Frontend | HTML, CSS, JavaScript |
-| Backend | Python, Flask, Flask-CORS |
-| AI Model | Amazon Bedrock — Amazon Nova 2 Lite |
-| Fine-tuning | Bedrock Reinforcement Fine-Tuning (RFT) |
-| Reward Grader | AWS Lambda (Python) |
-| Training Data | CDC FY2026 ICD-10-CM + Synthetic Generation |
-| Data Storage | Amazon S3 |
-| IAM | AWS IAM Roles (least-privilege) |
-| Agentic Runtime | Amazon Bedrock AgentCore Runtime |
-| MCP Gateway | Amazon Bedrock AgentCore Gateway |
-| MCP Servers | EHR, CMS Codes, Payer Policy |
-| Frontend Hosting | Vercel |
-| Backend Hosting | Render |
+| Layer            | Technology                                  |
+| ---------------- | ------------------------------------------- |
+| Frontend         | HTML, CSS, JavaScript                       |
+| Backend          | Python, Flask, Flask-CORS                   |
+| AI Model         | Amazon Bedrock ~ Amazon Nova 2 Lite         |
+| Fine-tuning      | Bedrock Reinforcement Fine-Tuning (RFT)     |
+| Reward Grader    | AWS Lambda (Python)                         |
+| Training Data    | CDC FY2026 ICD-10-CM + Synthetic Generation |
+| Data Storage     | Amazon S3                                   |
+| IAM              | AWS IAM Roles (least-privilege)             |
+| Agentic Runtime  | Amazon Bedrock AgentCore Runtime            |
+| MCP Gateway      | Amazon Bedrock AgentCore Gateway            |
+| MCP Servers      | EHR, CMS Codes, Payer Policy                |
+| Frontend Hosting | Vercel                                      |
+| Backend Hosting  | Render                                      |
 
 ---
 
@@ -135,9 +144,9 @@ The AgentCore Gateway acts as a centralized, fully managed interface that regist
 ```
 IntimaAI/
 ├── frontend/
-│   └── index.html              # Full UI — 4 coding modes
+│   └── index.html              # Full UI ~ 4 coding modes
 ├── backend/
-│   ├── app.py                  # Flask API — 4 endpoints
+│   ├── app.py                  # Flask API ~ 4 endpoints
 │   ├── invoke_model.py         # Bedrock model invocation
 │   ├── requirements.txt        # Python dependencies
 │   └── Procfile                # Render deployment config
@@ -156,15 +165,16 @@ IntimaAI/
 
 ## API Endpoints
 
-| Endpoint | Method | Description |
-|---|---|---|
-| `/health` | GET | Health check |
-| `/api/icd10` | POST | ICD-10-CM code assignment |
-| `/api/cpt` | POST | CPT procedure code assignment |
-| `/api/payer-policy` | POST | Payer coverage policy evaluation |
-| `/api/analyze` | POST | Full coding analysis (all three) |
+| Endpoint            | Method | Description                      |
+| ------------------- | ------ | -------------------------------- |
+| `/health`           | GET    | Health check                     |
+| `/api/icd10`        | POST   | ICD-10-CM code assignment        |
+| `/api/cpt`          | POST   | CPT procedure code assignment    |
+| `/api/payer-policy` | POST   | Payer coverage policy evaluation |
+| `/api/analyze`      | POST   | Full coding analysis (all three) |
 
 **Request body for all endpoints:**
+
 ```json
 {
   "clinical_note": "Patient clinical documentation here...",
@@ -201,17 +211,20 @@ Make sure your AWS credentials have `AmazonBedrockFullAccess` and Nova 2 Lite mo
 ## Deployment
 
 **Backend → Render**
+
 - Root directory: `backend`
 - Build command: `pip install -r requirements.txt`
 - Start command: `python app.py`
 - Environment variables: `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_DEFAULT_REGION`
 
 **Frontend → Vercel**
+
 - Root directory: `frontend`
 - Framework: Other
 - No environment variables needed
 
 ---
+
 Access our product at: https://intima-ai-latest.vercel.app/login
 
 ## Training Data & Model
@@ -228,7 +241,7 @@ IntimaAI's fine-tuned model was trained using:
 
 ## Limitations & Responsible Use
 
-- IntimaAI is an **assistive tool** — outputs must be reviewed by certified medical coders before claim submission
+- IntimaAI is an **assistive tool** ~ outputs must be reviewed by certified medical coders before claim submission
 - Payer policy predictions are based on known published policies and may not reflect the most recent updates
 - CPT code suggestions do not constitute medical advice
 - Not a substitute for a certified professional coder (CPC) or certified coding specialist (CCS)
@@ -238,10 +251,9 @@ IntimaAI's fine-tuned model was trained using:
 
 ## Built With
 
-- [Amazon Bedrock](https://aws.amazon.com/bedrock/) — Foundation model hosting and fine-tuning
-- [CDC ICD-10-CM FY2026](https://www.cdc.gov/nchs/icd/icd-10-cm/files.html) — Official diagnosis code set
-- [Vercel](https://vercel.com/) — Frontend deployment
-- [Render](https://render.com/) — Backend deployment
+- [Amazon Bedrock](https://aws.amazon.com/bedrock/) ~ Foundation model hosting and fine-tuning
+- [CDC ICD-10-CM FY2026](https://www.cdc.gov/nchs/icd/icd-10-cm/files.html) ~ Official diagnosis code set
+- [Vercel](https://vercel.com/) ~ Frontend deployment
+- [Render](https://render.com/) ~ Backend deployment
 
 ---
-

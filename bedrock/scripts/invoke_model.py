@@ -1,5 +1,5 @@
 """
-Bedrock Model Invocation — Medical Coding Agent
+Bedrock Model Invocation ~ Medical Coding Agent
 Uses Amazon Nova 2 Lite base model directly (no fine-tuning, no MCP gateway)
 """
 
@@ -25,8 +25,8 @@ For each request:
 4. Flag any payer policy considerations if relevant
 
 Format your response as:
-ICD-10 Codes: [code] — [description]
-CPT Codes: [code] — [description]  
+ICD-10 Codes: [code] ~ [description]
+CPT Codes: [code] ~ [description]  
 Rationale: [brief explanation]
 Payer Notes: [any coverage/prior auth flags]"""
 
@@ -56,7 +56,7 @@ def build_prompt(task: str, content: str, payer: Optional[str] = None) -> str:
 
 
 def _invoke(prompt: str, max_tokens: int = 1024) -> str:
-    """Core invocation — Nova 2 Lite with correct schema."""
+    """Core invocation ~ Nova 2 Lite with correct schema."""
     request_body = {
         "schemaVersion": "messages-v1",
         "messages": [

@@ -1,6 +1,6 @@
 """
 Lambda Reward Grader for Medical Coding RFT
-Bedrock sends a BATCH of samples — must return one score per input.
+Bedrock sends a BATCH of samples ~ must return one score per input.
 """
 
 import json
@@ -48,7 +48,7 @@ def score_single(model_response: str, reference_answer: str) -> float:
 
 def lambda_handler(event, context):
     """
-    Bedrock RFT sends a batch — event is a LIST of inputs.
+    Bedrock RFT sends a batch ~ event is a LIST of inputs.
     Must return a list with one {"aggregate_reward_score": float} per input.
     """
     try:

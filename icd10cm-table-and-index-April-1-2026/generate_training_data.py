@@ -1,5 +1,5 @@
 """
-Synthetic Training Data Generator — Medical Coding RFT
+Synthetic Training Data Generator ~ Medical Coding RFT
 Reads icd10cm-codes-April-1-2026.txt and generates clinical note → ICD-10 code
 pairs using Claude via Amazon Bedrock. Outputs a train.jsonl file ready for RFT.
 

@@ -1,5 +1,5 @@
 """
-Medical Coding Agent — Flask Backend
+Medical Coding Agent ~ Flask Backend
 Bridges the IntimaAI frontend to the fine-tuned Bedrock model.
 
 Endpoints
@@ -42,7 +42,7 @@ app = Flask(__name__)
 
 # Allow requests from the Vite dev server AND any deployed frontend origin.
 # Set FRONTEND_ORIGIN in your environment when deploying.
-CORS(app)  # Open for all origins — fine for local dev
+CORS(app)  # Open for all origins ~ fine for local dev
 
 
 # ─── Helpers ──────────────────────────────────────────────────────────────────

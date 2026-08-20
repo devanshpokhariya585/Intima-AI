@@ -1,5 +1,5 @@
 /**
- * Home.jsx — IntimaAI Chat Interface
+ * Home.jsx ~ IntimaAI Chat Interface
  *
  * Backend integration:
  *  - POST /api/analyze      → full ICD-10 + CPT + payer analysis  (default)
@@ -59,7 +59,7 @@ const getGreeting = () => {
 }
 
 /**
- * callBackend — single function that routes to the correct endpoint.
+ * callBackend ~ single function that routes to the correct endpoint.
  * Returns the text result string or throws on network/server error.
  */
 async function callBackend(task, clinicalNote, payer = null) {
@@ -103,7 +103,7 @@ const Avatar = ({ name, size = 34 }) => {
 }
 
 /**
- * MessageBubble — renders a single chat message.
+ * MessageBubble ~ renders a single chat message.
  * Handles:
  *   - user messages (right-aligned, purple tint)
  *   - assistant messages (left-aligned, dark card)
@@ -232,7 +232,7 @@ export default function Home() {
   }
 
   /**
-   * sendMessage — core send function.
+   * sendMessage ~ core send function.
    *
    * Flow:
    *  1. Append user message immediately (optimistic UI)
@@ -567,7 +567,7 @@ export default function Home() {
                 >{mode.label}</button>
               ))}
 
-              {/* Payer dropdown — only shown in payer_policy mode */}
+              {/* Payer dropdown ~ only shown in payer_policy mode */}
               {taskMode === 'payer_policy' && (
                 <select
                   value={payer}
